@@ -8,8 +8,11 @@
 # Copyright:   (c) annabel ene 2026
 # Licence:     <your licence>
 #---------------------------------------------------------------------------------------
-def month_data():
-    month_data =[
+
+
+def main():
+# These is a dictionary containing information based on month and number of days within it
+ month_data =[
                {"month" : "January" , "no_days": 31 , "no_month" : 1},
                {"month" : "Feburary" , "no_days": 28 , "no_month" : 2},
                {"month" : "March", "no_days" : 31 , "no_month" : 3},
@@ -23,9 +26,6 @@ def month_data():
                {"month" : "November" , "no_days" : 30 , "no_month" : 11},
                { "month" : "December" , "no_days" : 31 , "no_month" : 12}
             ]
-def main():
-# These is a dictionary containing information based on month and number of days within it
-
  #use state whether loop would run or stop
  is_running = True
  while is_running:
@@ -49,7 +49,7 @@ def main():
             print(f"{b} {a} ina month time it would be...")
         print(f"From {b} {a} in a month time it would be ...")
         # turning b back to a number
-        if type(b) == str:
+        if type(b) ==  str:
 
             b = b.strip().title()
             for row in month_data:
