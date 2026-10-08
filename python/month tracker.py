@@ -27,37 +27,35 @@ def main():
                { "month" : "December" , "no_days" : 31 , "no_month" : 12}
             ]
  #use state whether loop would run or stop
- is_running = True
- while is_running:
-    choice = input("Do you want to 'search' what it be in a month time or 'close' ").strip().lower()
-    # decided what happens is the user input 'search' or 'close'
-    if choice == "close":
-        is_running = False
-    elif choice == "search":
-        a = int(input("type in number of the day"))
-        b = input("type in a month or the position the month is in the year").strip().capitalize()
-      # converts user_input of b to an integer  if it a number
-        if b.isdigit():
-            b = int(b)
-            # matching the users input for b, by checking the rows withing my dictionary for the key with that number
-            for row in month_data:
-                match row:
-                   case{"month" : m_name , "no_month": m_num }:
-                       if m_num == b:
-                          b = m_name
-                          break
-            print(f"{b} {a} ina month time it would be...")
+ choice = input("Do you want to 'search' what it be in a month time or 'close' ").strip().lower()
+ # decided what happens is the user input 'search' or 'close'
+ if choice == "close":
+    print("The end")
+ elif choice == "search":
+     a = int(input("type in number of the day"))
+     b = input("type in a month or the position the month is in the year").capitalize()
+     # converts user_input of b to an integer  if it a number
+     if b.isdigit():
+        b = int(b)
+        # matching the users input for b, by checking the rows withing my dictionary for the key with that number
+        for row in month_data:
+             match row:
+               case{"month" : m_name , "no_month": m_num }:
+                  if m_num == b:
+                       b = m_name
+                       break
+
         print(f"From {b} {a} in a month time it would be ...")
         # turning b back to a number
-        if type(b) ==  str:
+     if type(b) == str:
 
-            b = b.strip().title()
-            for row in month_data:
-                match row:
-                    case{"no_month": m_num, "month" : m_name }:
-                        if b == m_name:
-                            b = m_num
-                            break
+        b = b.strip().title()
+        for row in month_data:
+           match row:
+             case{"no_month": m_num, "month" : m_name }:
+               if b == m_name:
+                 b = m_num
+                 break
 
         ans = b
         while ans == b :
