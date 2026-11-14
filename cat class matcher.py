@@ -65,7 +65,7 @@ if drop_cat_off.lower() in ["yes", "y"]:
     
     new_cat_profile = Cat (cat_name, cat_breed, cat_owner, cat_age)
     cat_profile.append(new_cat_profile) # adds the new cat profile to teh bottom of the list of our cat proiles       
-elif drop_cat_off.lower() in ["no", "n"]:
+elif drop_cat_off.lower() in ["no", "n"] :
     random_cat_profile = input("Do want to find out about a random cat yes/no/y/n")
     if random_cat_profile.lower() in ["yes", "y"]:
         random_cat = random.choice(cat_profile) # choose a random cat proile form the list
