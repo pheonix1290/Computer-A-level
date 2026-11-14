@@ -57,19 +57,17 @@ print(f"Hi {user_name} how could we help you today . Below is our options:\n 1. 
 
 drop_cat_off = input ("Drop off a cat in Day care : yes/no/y/n")
 
-if drop_cat_off.lower() == "yes" or "y":
+if drop_cat_off.lower() in ["yes", "y"]:
     cat_name = input(f"What is the name of your cat {user_name}? ")
     cat_breed = input ("What is tje breed of teh cat ?")
     cat_owner = user_name
     cat_age = int(input("What is the age of the cat ? "))
     
     new_cat_profile = Cat (cat_name, cat_breed, cat_owner, cat_age)
-    
-    cat_profile.append(new_cat_profile) # adds the new cat profile to teh bottom of the list of our cat proiles
-elif drop_cat_off.lower() == "no" or "n":
-    random_cat_profile = input("Do wnat find out about a random cat yes/no/y/n")
-    
-    if random_cat_profile.lower() == "yes" or "y":
+    cat_profile.append(new_cat_profile) # adds the new cat profile to teh bottom of the list of our cat proiles       
+elif drop_cat_off.lower() in ["no", "n"]:
+    random_cat_profile = input("Do want to find out about a random cat yes/no/y/n")
+    if random_cat_profile.lower() in ["yes", "y"]:
         random_cat = random.choice(cat_profile) # choose a random cat proile form the list
         
         print("What do you want to know about the cat you have choosen?")
@@ -82,9 +80,9 @@ elif drop_cat_off.lower() == "no" or "n":
         elif option.lower() == "age":
             print(f"The lucky cat's age is {random_cat.age} years old")
         elif option.lower() == "all":
-            print(random_cat.identity()) 
+            print(random_cat.identify()) 
             print(
-                 """
+                 r"""
                 /\_/\  
                ( o.o ) 
                / > m )   my is the cat's paw and it's been licked
@@ -94,9 +92,9 @@ elif drop_cat_off.lower() == "no" or "n":
             )       
         else:
             print("Sorry today musn't be your day,try again tomorrow who knows you might find your lucky cat  < | | >")
-    elif random_cat_profile.lower() == "no" or "n":
+    elif random_cat_profile.lower() in ["no", "n"]:
         print(
-            """
+            r"""
            /\_/\  
           ( o.o ) 
            > ^ <  
@@ -106,8 +104,8 @@ elif drop_cat_off.lower() == "no" or "n":
         
     random_action = input ("Do want to know what  your random cat is doing option: yes/no")
     
-    if random_action.lower() == "yes" or "y":
+    if random_action.lower() in ["yes", "y"]:
         random_action =  random.choice([random_cat.purr(), random_cat.sleep()])
-        print(f"Your random lucky cat is {random_action}")
+        print(f"Your random lucky cat  {random_action}")
     else:
         print("Awwn to bad, sorry we can't help you today,well have a nice day.")          
